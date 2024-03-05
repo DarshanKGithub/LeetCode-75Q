@@ -3,28 +3,43 @@
 Return the merged string.*/
 
 #include <iostream>
-
+#include <string>
 using namespace std;
 
-class Solution
+int main()
 {
-public:
-    string mergeAlternately(string word1, string word2)
+    // Declare the Strings
+
+    string s1 = "Darshan";
+    string s2 = "Kshetri";
+
+    // Intialize the ans string the stroing the answer of those strings
+    string ans;
+
+    // Calculate the size of the both string by usinh size or the length methods
+    int size1 = s1.length();
+    int size2 = s2.size();
+
+    cout << size1 << endl;
+    cout << size2 << endl;
+
+    int i = 0;
+    int j = 0;
+
+    while (i < size1 || j < size2)
     {
-        string result = "";
-        int i = 0;
-        while (i < word1.length() || i < word2.length())
+        if (i < size1)
         {
-            if (i < word1.length())
-            {
-                result += word1[i];
-            }
-            if (i < word2.length())
-            {
-                result += word2[i];
-            }
+            ans += s1[i];
             i++;
         }
-        return result;
+        if (j < size2)
+        {
+            ans += s2[j];
+            j++;
+                }
     }
-};
+
+    cout << ans << endl;
+    return 0;
+}
